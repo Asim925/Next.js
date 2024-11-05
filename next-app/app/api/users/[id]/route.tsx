@@ -9,5 +9,5 @@ interface Props {
 
 export function GET(request: NextRequest, { params: { id } }: Props) {
   if (id > 10) return NextResponse.json({ error: "not found", status: 404 });
-  return NextResponse.json({ id: 1, name: "ali" });
+  return NextResponse.json({ id: 1, name: "alii" });
 }
