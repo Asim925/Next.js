@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import schema from "./schema";
 
 export function GET(request: NextRequest) {
   // NextRequest prevents caching
@@ -13,5 +14,24 @@ export function GET(request: NextRequest) {
     { id: 8, name: "Aliza" },
     { id: 9, name: "Asim" },
     { id: 10, name: "Ahmed" },
+    { id: 11, name: "Ali" },
+    { id: 12, name: "Asim" },
+    { id: 13, name: "Ahmed" },
+    { id: 14, name: "Ali" },
+    { id: 15, name: "Asim" },
+    { id: 16, name: "Ahmed" },
+    { id: 17, name: "Ali" },
+    { id: 18, name: "Aliza" },
+    { id: 19, name: "Asim" },
+    { id: 9, name: "Alia" },
+    { id: 20, name: "Ahmed" },
   ]);
+}
+
+export async function POST(request: NextRequest) {
+  let body = await request.json();
+  let validation = schema.safeParse(body);
+  if (!validation.success)
+    return NextResponse.json(validation.error.errors, { status: 404 });
+  return NextResponse.json(body);
 }
