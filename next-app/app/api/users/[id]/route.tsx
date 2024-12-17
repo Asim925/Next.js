@@ -27,5 +27,5 @@ export async function PUT(request: NextRequest, { params: { id } }: Props) {
 export function DELETE(request: NextRequest, { params: { id } }: Props) {
   if (id > 10)
     return NextResponse.json({ error: "USER NOT FOUND" }, { status: 404 });
-  if (id > 10) return NextResponse.json({});
+  if (id < 10) return NextResponse.json({});
 }
