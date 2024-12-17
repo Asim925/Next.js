@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: Hello1world # Set root password
+      MYSQL_DATABASE: nextapp # Create a default database
+      MYSQL_USER: dbUser # Non-root user
+      MYSQL_PASSWORD: Hello1world # Password for the non-root user
+    ports:
+      - "3306:3306" # Expose MySQL on port 3306
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist MySQL data
+    networks:
+      - my-network
+
+volumes:
+  mysql-data:
+
+networks:
+  my-network:
+    driver: bridge
