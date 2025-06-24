@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
+import Comments from "./components/Comments";
 
 export default function Home() {
   return (

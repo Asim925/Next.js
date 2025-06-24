@@ -9,7 +9,8 @@ interface Props {
 }
 
 export function GET(request: NextRequest, { params: { id } }: Props) {
-  if (id > 10) return NextResponse.json({ error: "not found", status: 404 });
+  if (id > 10)
+    return NextResponse.json({ error: `user ${id} not found`, status: 404 });
   return NextResponse.json({ id: id, name: "alii" });
 }
 
