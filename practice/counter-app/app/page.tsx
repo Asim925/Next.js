@@ -1,14 +1,12 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 const page = () => {
   const [value, setValue] = useState(0);
-  let valueRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e: React.FormEvent) => {
-    setValue(Number(valueRef.current?.value));
-    e.preventDefault();
-    console.log(value);
+  const handleChange = (event: any) => {
+    setValue(event.target.value);
+    event.preventDefault();
   };
   return (
     <div>
@@ -23,12 +21,21 @@ const page = () => {
       <div>
         <input
           className="mt-3 shadow appearance-none border-2 bg-orange-950 border-orange-500 rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
+          type="number"
           placeholder="Enter the value"
           autoFocus
           onChange={handleChange}
         />
+        <button className="p-3" type="submit">
+          Submit
+        </button>
         <div>
+          <p className="text-2xl">
+            {value
+              ? "Your number is now: " + value
+              : "Default number is: " + value}
+          </p>
+
           <button className="">Increment</button>
           <button className="">Decrement</button>
           <button className="">Reset</button>
