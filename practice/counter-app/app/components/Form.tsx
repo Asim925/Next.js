@@ -7,7 +7,7 @@ const Form = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (valueRef.current?.value) {
-      let formValue = Number(valueRef.current?.value);
+      const formValue = Number(valueRef.current?.value);
       setValue(formValue);
     }
     if (valueRef.current) valueRef.current.value = "";
