@@ -14,26 +14,28 @@ const Form = () => {
   };
 
   return (
-    <form className="w-[50%]" onSubmit={handleSubmit}>
-      <input
-        className="my-4 shadow appearance-none border-2 bg-purple-950 border-purple-500 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-        type="number"
-        placeholder="Enter the value"
-        autoFocus
-        ref={valueRef}
-      />
-      <button
-        className="bg-purple-800 text-white border-purple-500 hover:bg-purple-950 "
-        type="submit"
-      >
-        submit
-      </button>
-      <div>
-        <p className="text-2xl my-4">
+    <form className="lg:w-[50%] w-full" onSubmit={handleSubmit}>
+      <div className="flex  lg:flex-col max-md:justify-around max-lg:gap-2">
+        <input
+          className="lg:my-5 max-lg:my-3 shadow appearance-none border-2 bg-purple-950 border-purple-500 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+          type="number"
+          placeholder="Enter the value"
+          autoFocus
+          ref={valueRef}
+        />
+        <button
+          className="mb-3 max-lg:my-3 flex-shrink-2 grow-0 bg-purple-800  text-white border-purple-500 hover:bg-purple-950 "
+          type="submit"
+        >
+          submit
+        </button>
+      </div>
+      <div className="my-5">
+        <p className="text-2xl my-5">
           {value ? "Your number is now: " + value : "Default number is: " + 0}
         </p>
 
-        <div className="flex gap-5">
+        <div className="flex  gap-2">
           <button
             onClick={() => setValue(value + 1)}
             className="bg-fuchsia-500 border-fuchsia-950 hover:bg-fuchsia-600 active:bg-fuchsia-700 "

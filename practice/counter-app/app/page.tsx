@@ -5,10 +5,12 @@ import Form from "./components/Form";
 
 const page = () => {
   return (
-    <div className="flex justify-center items-center gap-x-10 px-[10lvw] h-lvh ">
-      <Details />
-      <Form />
-    </div>
+    <>
+      <div className=" flex justify-center items-center lg:flex-row max-lg:flex-col lg:gap-x-10 lg:px-[10lvw] h-lvh ">
+        <Details />
+        <Form />
+      </div>
+    </>
   );
 };
 
