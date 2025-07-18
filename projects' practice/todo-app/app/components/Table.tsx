@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import TodoMaker from "./TodoMaker";
 
-interface Data {
+export interface Data {
   id: number;
   userId: number;
   title: string;
@@ -48,6 +49,9 @@ const Table = ({ todos, currentPage }: Props) => {
           components, client interactions, and Next.js routing.
         </p>
       </div>
+
+      <TodoMaker getTodo={(task) => setData([task, ...data])} />
+
       <div className="xl:mx-40 lg:mx-30 mx-5 my-10 border-gray-600 border-2 overflow-x-auto">
         <div className="min-w-[600px]">
           {" "}
